@@ -7,22 +7,22 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import info.hccis.layoutpresentation.FMListFragment.OnListFragmentInteractionListener;
-import info.hccis.layoutpresentation.dummy.DummyContent.DummyItem;
+import info.hccis.layoutpresentation.CampersFragment.OnListFragmentInteractionListener;
+import info.hccis.layoutpresentation.dummy.DummyContent.Camper;
 
 import java.util.List;
 
 /**
- * {@link RecyclerView.Adapter} that can display a {@link DummyItem} and makes a call to the
+ * {@link RecyclerView.Adapter} that can display a {@link Camper} and makes a call to the
  * specified {@link OnListFragmentInteractionListener}.
  * TODO: Replace the implementation with code for your data type.
  */
 public class MyFMListRecyclerViewAdapter extends RecyclerView.Adapter<MyFMListRecyclerViewAdapter.ViewHolder> {
 
-    private final List<DummyItem> mValues;
+    private final List<Camper> mValues;
     private final OnListFragmentInteractionListener mListener;
 
-    public MyFMListRecyclerViewAdapter(List<DummyItem> items, OnListFragmentInteractionListener listener) {
+    public MyFMListRecyclerViewAdapter(List<Camper> items, OnListFragmentInteractionListener listener) {
         mValues = items;
         mListener = listener;
     }
@@ -30,7 +30,7 @@ public class MyFMListRecyclerViewAdapter extends RecyclerView.Adapter<MyFMListRe
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.fragment_fmlist, parent, false);
+                .inflate(R.layout.fragment_campers, parent, false);
         return new ViewHolder(view);
     }
 
@@ -38,7 +38,7 @@ public class MyFMListRecyclerViewAdapter extends RecyclerView.Adapter<MyFMListRe
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
         holder.mIdView.setText(mValues.get(position).id);
-        holder.mContentView.setText(mValues.get(position).content);
+        holder.mContentView.setText(mValues.get(position).toString());
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,7 +61,7 @@ public class MyFMListRecyclerViewAdapter extends RecyclerView.Adapter<MyFMListRe
         public final View mView;
         public final TextView mIdView;
         public final TextView mContentView;
-        public DummyItem mItem;
+        public Camper mItem;
 
         public ViewHolder(View view) {
             super(view);

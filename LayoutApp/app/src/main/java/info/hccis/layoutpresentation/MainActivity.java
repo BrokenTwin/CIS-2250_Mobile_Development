@@ -23,7 +23,7 @@ import android.view.Menu;
 
 import info.hccis.layoutpresentation.dummy.DummyContent;
 
-public class MainActivity extends AppCompatActivity implements FMListFragment.OnListFragmentInteractionListener {
+public class MainActivity extends AppCompatActivity implements CampersFragment.OnListFragmentInteractionListener {
 
     private AppBarConfiguration mAppBarConfiguration;
 
@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity implements FMListFragment.On
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow,
-                R.id.nav_tools, R.id.nav_share, R.id.nav_send, R.id.nav_fitness_member_list)
+                R.id.nav_tools, R.id.nav_share, R.id.nav_send, R.id.nav_campers_list)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity implements FMListFragment.On
     }
 
     @Override
-    public void onListFragmentInteraction(DummyContent.DummyItem item) {
+    public void onListFragmentInteraction(DummyContent.Camper item) {
 
     }
 }

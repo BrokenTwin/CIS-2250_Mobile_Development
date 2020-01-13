@@ -13,9 +13,9 @@
             android:icon="@drawable/ic_menu_gallery"
             android:title="@string/menu_gallery" />
         <item
-            android:id="@+id/nav_fitness_member_list"
+            android:id="@+id/nav_campers_list"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Fitness Members" />
+            android:title="Campers" />
         <item
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_menu_slideshow"

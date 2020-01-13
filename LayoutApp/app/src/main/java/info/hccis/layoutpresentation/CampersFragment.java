@@ -13,9 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import info.hccis.layoutpresentation.dummy.DummyContent;
-import info.hccis.layoutpresentation.dummy.DummyContent.DummyItem;
-
-import java.util.List;
+import info.hccis.layoutpresentation.dummy.DummyContent.Camper;
 
 /**
  * A fragment representing a list of Items.
@@ -23,7 +21,7 @@ import java.util.List;
  * Activities containing this fragment MUST implement the {@link OnListFragmentInteractionListener}
  * interface.
  */
-public class FMListFragment extends Fragment {
+public class CampersFragment extends Fragment {
 
     // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
@@ -35,13 +33,13 @@ public class FMListFragment extends Fragment {
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
      */
-    public FMListFragment() {
+    public CampersFragment() {
     }
 
     // TODO: Customize parameter initialization
     @SuppressWarnings("unused")
-    public static FMListFragment newInstance(int columnCount) {
-        FMListFragment fragment = new FMListFragment();
+    public static CampersFragment newInstance(int columnCount) {
+        CampersFragment fragment = new CampersFragment();
         Bundle args = new Bundle();
         args.putInt(ARG_COLUMN_COUNT, columnCount);
         fragment.setArguments(args);
@@ -60,7 +58,7 @@ public class FMListFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_fmlist_list, container, false);
+        View view = inflater.inflate(R.layout.fragment_campers_list, container, false);
 
         // Set the adapter
         if (view instanceof RecyclerView) {
@@ -71,7 +69,7 @@ public class FMListFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MyFMListRecyclerViewAdapter(DummyContent.ITEMS, mListener));
+            recyclerView.setAdapter(new MyFMListRecyclerViewAdapter(DummyContent.CAMPERS, mListener));
         }
         return view;
     }
@@ -106,6 +104,6 @@ public class FMListFragment extends Fragment {
      */
     public interface OnListFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onListFragmentInteraction(DummyItem item);
+        void onListFragmentInteraction(Camper item);
     }
 }
